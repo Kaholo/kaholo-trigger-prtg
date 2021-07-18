@@ -14,7 +14,7 @@ function postNotification(req, res, settings, triggerControllers) {
         if (!devId && sensNamePat && !micromatch.isMatch(sensor, sensNamePat)) return;
         if (sensId && sensorid !== sensId) return;
         if (!sensId && devNamePat && !micromatch.isMatch(device, devNamePat)) return;
-        if (trigPrior && trigPrior !== any){
+        if (trigPrior && trigPrior !== "Any"){
           if (!includeHigher && trigPrior != priority) return;
           if (parseInt(trigPrior) > priority) return;
         }
