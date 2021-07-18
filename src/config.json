@@ -1,0 +1,74 @@
+{
+  "name": "PRTG-Trigger",
+  "type": "trigger",
+  "execProgram": "node",
+  "main": "app.js",
+  "imgUrl": "logo.png",
+  "version": "1.0.0",
+  "description": "Handles PRTG HTTP Notifications",
+  "methods": [
+    {
+      "name": "postNotification",
+      "route": "post /webhook/prtg/notification",
+      "viewName": "PRTG HTTP Notification",
+      "params": [
+        {
+          "name": "sensNamePat",
+          "viewName": "Sensor Name Pattern",
+          "type": "string"
+        },
+        {
+          "name": "sensId",
+          "viewName": "Sensor ID",
+          "type": "string"
+        },
+        {
+          "name": "devNamePat",
+          "viewName": "Device Name Pattern",
+          "type": "string"
+        },
+        {
+          "name": "devId",
+          "viewName": "Device ID",
+          "type": "string"
+        },
+        {
+          "name": "priority",
+          "viewName": "Priority",
+          "type": "options",
+          "options": [
+            {
+              "id": "Any",
+              "name": "Any"
+            },
+            {
+              "id": "1",
+              "name": "1"
+            },
+            {
+              "id": "2",
+              "name": "2"
+            },
+            {
+              "id": "3",
+              "name": "3"
+            },
+            {
+              "id": "4",
+              "name": "4"
+            },
+            {
+              "id": "5",
+              "name": "5"
+            }
+          ]
+        },
+        {
+          "name": "includeHigher",
+          "viewName": "Include Higher Priority",
+          "type": "boolean"
+        }
+      ]
+    }
+  ]
+}

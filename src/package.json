@@ -1,0 +1,13 @@
+{
+  "name": "kaholo-trigger-prtg",
+  "version": "1.0.0",
+  "description": "Kaholo plugin for integration with PRTG HTTP Notifiactions(Webhooks)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "micromatch": "^4.0.4"
+  }
+}
