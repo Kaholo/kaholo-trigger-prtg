@@ -4,7 +4,7 @@
   "execProgram": "node",
   "main": "app.js",
   "imgUrl": "logo.png",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Handles PRTG HTTP Notifications",
   "methods": [
     {
@@ -13,23 +13,13 @@
       "viewName": "PRTG HTTP Notification",
       "params": [
         {
-          "name": "sensNamePat",
-          "viewName": "Sensor Name Pattern",
+          "name": "sensorPat",
+          "viewName": "Sensor Pattern",
           "type": "string"
         },
         {
-          "name": "sensId",
-          "viewName": "Sensor ID",
-          "type": "string"
-        },
-        {
-          "name": "devNamePat",
-          "viewName": "Device Name Pattern",
-          "type": "string"
-        },
-        {
-          "name": "devId",
-          "viewName": "Device ID",
+          "name": "devicePat",
+          "viewName": "Device Pattern",
           "type": "string"
         },
         {
