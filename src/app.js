@@ -8,12 +8,9 @@ function postNotification(req, res, settings, triggerControllers) {
       return res.status(400).send("Bad Kahoko Notification Format");
     }
     triggerControllers.forEach(trigger => {
-        const {sensNamePat, sensId, devNamePat, 
-               devId, priority: trigPrior, includeHigher} = trigger.params;
-        if (devId && deviceid !== devId) return;
-        if (!devId && sensNamePat && !micromatch.isMatch(sensor, sensNamePat)) return;
-        if (sensId && sensorid !== sensId) return;
-        if (!sensId && devNamePat && !micromatch.isMatch(device, devNamePat)) return;
+        const {sensorPat, devicePat, priority: trigPrior, includeHigher} = trigger.params;
+        if (sensorPat && sensorid !== sensorPat && !micromatch.isMatch(sensor, sensorPat)) return;
+        if (devicePat && deviceid !== devicePat && !micromatch.isMatch(device, devicePat)) return;
         if (trigPrior && trigPrior !== "Any"){
           if (!includeHigher && trigPrior != priority) return;
           if (parseInt(trigPrior) > priority) return;
